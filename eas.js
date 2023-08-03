@@ -8,7 +8,7 @@ var gridAmount;
 
 //Read User Input Number for grid size
 btn.addEventListener('click', () => {
-    let gridSize = prompt("Please Enter Grid Size(Max 100):")
+    let gridSize = prompt("Please Enter Grid Size(Max 100):");
     calculateGrid(gridSize);
     generateGrid();
 })
@@ -26,10 +26,18 @@ function generateGrid() {
         var innerDiv = document.createElement('div');
         innerDiv.classList.add('item');
         innerDiv.setAttribute('style', `height: ${boxHeight}px; width: ${boxWidth}px`);
-        console.log(boxHeight);
-        console.log(boxWidth);
         container.appendChild(innerDiv);
     }
+    const items = document.querySelectorAll('.item');
+        items.forEach((item) => {
+            item.addEventListener('mouseover', () => {
+                item.setAttribute('style', `height: ${boxHeight}px; width: ${boxWidth}px; background: black;`)
+            });
+        });
 }
+
+
+
+
 
 
